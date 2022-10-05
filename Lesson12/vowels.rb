@@ -9,7 +9,14 @@ def vowels(word)
   return res
 end
 
+def vowels_and_consonants(word)
+  vowels_count = vowels(word)
+  consonants_count = word.length - vowels_count
+  return [vowels_count, consonants_count]
+end
+
 puts "Введите слово:"
 user_input = STDIN.gets.chomp
 
-puts "В этом слове #{vowels(user_input)} гласных"
+result = vowels_and_consonants(user_input)
+puts "В этом слове #{result[0]} гласных и #{result[1]} согласных"
