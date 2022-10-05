@@ -110,4 +110,4 @@ result =
     results[6]
   end
 
-puts result + count.to_s
+puts "#{result} #{count}"
