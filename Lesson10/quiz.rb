@@ -2,45 +2,34 @@ puts "Мини-викторина. Ответьте на вопросы."
 puts
 
 current_path = File.dirname(__FILE__)
-questions = []
-answers = []
+questions_with_answers = []
 
-range = (1..7)
-range.each do |ind|
-  file_name = current_path + "/data/file" + ind.to_s + ".txt"
+file_names = Dir[current_path + "/data/*"]
+file_names.each do |file_name|
   if File.exist?(file_name)
     f = File.new(file_name, 'r:UTF-8')
     lines = f.readlines
     f.close
 
-    questions << lines[0].chomp
-    answers << lines[1].chomp
-  else
-    abort "Файл по пути " + file_name + " не найден"
+    questions_with_answers << [lines[0].chomp, lines[1].chomp]
   end
 end
 
 res = 0
+num = 3
 
-3.times {
-  question = questions.sample
-  ind = questions.index(question)
-  questions.delete(question)
-
-  answer = answers[ind]
-  answers.delete(answer)
-
-  puts question
+questions_with_answers.sample(num).each do |question_with_answer|
+  puts question_with_answer[0]
   user_input = gets.encode("UTF-8").chomp
 
-  if answer == user_input
+  if question_with_answer[1] == user_input
     puts "Верный ответ!"
     puts
     res += 1
   else
-    puts "Неверно. Правильный ответ: " + answer
+    puts "Неверно. Правильный ответ: " + question_with_answer[1]
     puts
   end
-}
+end
 
-puts "Правильных ответов: " + res.to_s + " из 3"
+puts "Правильных ответов: " + res.to_s + " из " + num.to_s
