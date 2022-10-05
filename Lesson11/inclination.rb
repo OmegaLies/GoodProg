@@ -20,7 +20,7 @@ puts "Введите через пробел слово три формы сло
 forms = STDIN.gets.chomp.split(' ')
 
 puts "Введите число:"
-number = STDIN.gets.chomp.to_i
+number = STDIN.gets.to_i
 
 result = inclination(number, forms[0], forms[1], forms[2])
 puts "Вот вам #{number} #{result}!"
