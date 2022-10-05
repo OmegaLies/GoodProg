@@ -6,13 +6,8 @@ questions_with_answers = []
 
 file_names = Dir[current_path + "/data/*"]
 file_names.each do |file_name|
-  if File.exist?(file_name)
-    f = File.new(file_name, 'r:UTF-8')
-    lines = f.readlines
-    f.close
-
-    questions_with_answers << [lines[0].chomp, lines[1].chomp]
-  end
+  lines = File.readlines(file_name, chomp: true)
+  questions_with_answers << [lines[0], lines[1]]
 end
 
 res = 0
