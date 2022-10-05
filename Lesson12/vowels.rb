@@ -9,5 +9,7 @@ def vowels(word)
   return res
 end
 
-puts "Введите слово"
+puts "Введите слово:"
 user_input = STDIN.gets.chomp
+
+puts "В этом слове #{vowels(user_input)} гласных"
