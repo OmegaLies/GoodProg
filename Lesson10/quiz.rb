@@ -5,26 +5,23 @@ current_path = File.dirname(__FILE__)
 questions_with_answers = []
 
 file_names = Dir[current_path + "/data/*"]
-file_names.each do |file_name|
-  lines = File.readlines(file_name, chomp: true)
-  questions_with_answers << [lines[0], lines[1]]
-end
+questions_with_answers = file_names.map { |file_name| File.readlines(file_name, chomp: true)}
 
-res = 0
-num = 3
+right_answers = 0
+number_of_questions = 3
 
-questions_with_answers.sample(num).each do |question_with_answer|
-  puts question_with_answer[0]
-  user_input = gets.encode("UTF-8").chomp
+questions_with_answers.sample(number_of_questions).each do |question, answer|
+  puts question
+  user_input = STDIN.gets.encode("UTF-8").chomp
 
-  if question_with_answer[1] == user_input
+  if answer == user_input
     puts "Верный ответ!"
     puts
-    res += 1
+    right_answers += 1
   else
-    puts "Неверно. Правильный ответ: " + question_with_answer[1]
+    puts "Неверно. Правильный ответ: #{answer}"
     puts
   end
 end
 
-puts "Правильных ответов: " + res.to_s + " из " + num.to_s
+puts "Правильных ответов: #{right_answers} из #{number_of_questions}"
