@@ -1,10 +1,9 @@
 puts "Мини-викторина. Ответьте на вопросы."
 puts
 
-current_path = File.dirname(__FILE__)
 questions_with_answers = []
 
-file_names = Dir[current_path + "/data/*"]
+file_names = Dir[__dir__ + "/data/*"]
 questions_with_answers = file_names.map { |file_name| File.readlines(file_name, chomp: true)}
 
 right_answers = 0
