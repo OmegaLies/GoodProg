@@ -3,11 +3,11 @@ require_relative 'lib/question'
 puts "Мини-викторина. Ответьте на вопросы."
 puts
 
-file_names = Dir[__dir__ + "/data/*"]
-questions = file_names.map { |file_name|
+file_names = Dir["#{__dir__}/data/*"]
+questions = file_names.map do |file_name|
   lines = File.readlines(file_name, chomp: true)
   Question.new(lines[0], lines[1], lines[2])
-}
+end
 
 right_answers = 0
 number_of_questions = 3
