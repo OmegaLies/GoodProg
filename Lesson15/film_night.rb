@@ -6,8 +6,7 @@ films = file_names.map do |file_name|
   Film.new(lines[0], lines[1], lines[2])
 end
 
-directors = films.map { |film| film.director }
-directors.uniq
+directors = films.map { |film| film.director }.uniq
 
 puts "Программа «Фильм на вечер»"
 puts
