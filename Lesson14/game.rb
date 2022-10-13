@@ -9,13 +9,8 @@ end
 number_of_questions = 3
 right_answers = 0
 
-directors = []
-films.each do |film|
-  director = film.director
-  unless directors.include?(director)
-    directors << director
-  end
-end
+directors = films.map { |film| film.director }
+directors.uniq
 
 films.sample(number_of_questions).each do |film|
   puts "Кто снял фильм «#{film.title}»?"
