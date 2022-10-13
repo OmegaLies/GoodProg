@@ -16,7 +16,7 @@ films.sample(number_of_questions).each do |film|
   puts "Кто снял фильм «#{film.title}»?"
   puts
 
-  answers = [film.director] + (directors - [film.director]).sample(3).map { |variant| variant }
+  answers = [film.director] + directors.grep_v(film.director).sample(3).map { |variant| variant }
 
   answers.shuffle!.each_with_index { |answer, index| puts "#{index + 1}. #{answer}" }
   puts
