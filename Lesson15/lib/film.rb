@@ -10,5 +10,9 @@ class Film
   def right_answer?(user_director)
     user_director == @director
   end
+
+  def full_info
+    "#{@director} - #{@title} - (#{year})"
+  end
 end
 
