@@ -9,8 +9,7 @@ end
 number_of_questions = 3
 right_answers = 0
 
-directors = films.map { |film| film.director }
-directors.uniq
+directors = films.map { |film| film.director }.uniq
 
 films.sample(number_of_questions).each do |film|
   puts "Кто снял фильм «#{film.title}»?"
