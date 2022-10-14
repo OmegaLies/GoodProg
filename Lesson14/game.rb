@@ -9,7 +9,7 @@ end
 number_of_questions = 3
 right_answers = 0
 
-directors = films.map { |film| film.director }.uniq
+directors = films.map(&:director).uniq
 
 films.sample(number_of_questions).each do |film|
   puts "Кто снял фильм «#{film.title}»?"
@@ -17,7 +17,7 @@ films.sample(number_of_questions).each do |film|
 
   answers = [film.director] + directors.grep_v(film.director).sample(3).map { |variant| variant }
 
-  answers.shuffle!.each_with_index { |answer, index| puts "#{index + 1}. #{answer}" }
+  answers.shuffle!.each.with_index(1) { |answer, index| puts "#{index}. #{answer}" }
   puts
 
   user_input = STDIN.gets.to_i
