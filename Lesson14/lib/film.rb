@@ -11,4 +11,3 @@ class Film
     user_director == @director
   end
 end
-
