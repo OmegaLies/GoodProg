@@ -6,7 +6,7 @@ films = file_names.map do |file_name|
   Film.new(lines[0], lines[1], lines[2])
 end
 
-directors = films.map { |film| film.director }.uniq
+directors = films.map(&:director).uniq
 
 puts "Программа «Фильм на вечер»"
 puts
@@ -14,7 +14,7 @@ puts "Фильм какого режисера вы хотите сегодня 
 puts
 puts "Список режисеров:"
 
-directors.each_with_index { |director, index| puts "#{index + 1}. #{director}" }
+directors.each.with_index(1) { |director, index| puts "#{index }. #{director}" }
 puts
 puts "Введите номер из списка:"
 user_input = STDIN.gets.to_i
