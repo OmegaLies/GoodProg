@@ -6,8 +6,4 @@ class Film
     @director = director
     @year = year
   end
-
-  def right_answer?(user_director)
-    user_director == @director
-  end
 end
