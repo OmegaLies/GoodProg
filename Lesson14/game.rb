@@ -15,13 +15,13 @@ films.sample(number_of_questions).each do |film|
   puts "Кто снял фильм «#{film.title}»?"
   puts
 
-  answers = [film.director] + directors.grep_v(film.director).sample(3).map { |variant| variant }
+  answers = [film.director] + directors.grep_v(film.director).sample(3)
 
   answers.shuffle!.each.with_index(1) { |answer, index| puts "#{index}. #{answer}" }
   puts
 
   user_input = STDIN.gets.to_i
-  if film.right_answer?(answers[user_input - 1])
+  if film.director == answers[user_input - 1]
     puts "Верно!"
     puts
     right_answers += 1
