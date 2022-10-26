@@ -3,8 +3,8 @@
 def happy_birthday(person)
   greeting =
     case person[:sex]
-    when "Male" then "Дорогой"
-    when "Female" then "Дорогая"
+    when "Мужчина" then "Дорогой"
+    when "Женщина" then "Дорогая"
     else
       "Дорогое"
     end
@@ -20,7 +20,7 @@ end
 
 person = {
   name: "Борис",
-  sex: "Male",
+  sex: "Мужчина",
   age: "48",
   text: "Желаем успехов в лечении простатита!"
 }
