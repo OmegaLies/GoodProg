@@ -1,5 +1,5 @@
 <questions>
-  <question minutes="1" points="3" right="3">
+  <question time="30" points="3" right="3">
     <text>Какой цвет был у таблетки, которую принимает Нео в фильме “Матрица”?</text>
     <variants>
       <variant>Белый</variant>
@@ -8,7 +8,7 @@
       <variant>Желтый</variant>
     </variants>
   </question>
-  <question minutes="1" points="5" right="4">
+  <question time="45" points="5" right="4">
     <text>Какой национальный вид спорта Канады?</text>
     <variants>
       <variant>Футбол</variant>
@@ -17,7 +17,7 @@
       <variant>Лакросс</variant>
     </variants>
   </question>
-  <question minutes="1" points="3" right="3">
+  <question time="30" points="3" right="3">
     <text>Сколько было пилотируемых высадок на Луну? (ответ - число)</text>
     <variants>
       <variant>2</variant>
@@ -26,7 +26,7 @@
       <variant>8</variant>
     </variants>
   </question>
-  <question minutes="2" points="7" right="1">
+  <question time="60" points="7" right="1">
     <text>Как зовут домашнюю обезьянку Росса в сериале “Друзья”?</text>
     <variants>
       <variant>Марсель</variant>
@@ -35,7 +35,7 @@
       <variant>Бен</variant>
     </variants>
   </question>
-  <question minutes="1" points="1"  right="2">
+  <question time="30" points="1" right="2">
     <text>Когда пала Берлинская стена?</text>
     <variants>
       <variant>1988</variant>
@@ -44,7 +44,7 @@
       <variant>1991</variant>
     </variants>
   </question>
-  <question minutes="3" points="10" right="1">
+  <question time="60" points="10" right="1">
     <text>Как называется маленький пластмассовый кусочек на конце шнурка?</text>
     <variants>
       <variant>Аглет</variant>
@@ -53,7 +53,7 @@
       <variant>Никак</variant>
     </variants>
   </question>
-  <question minutes="1" points="5" right="3">
+  <question time="45" points="5" right="3">
     <text>Какой город является столицей Австралии?</text>
     <variants>
       <variant>Мельбурн</variant>
