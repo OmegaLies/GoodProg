@@ -1,6 +1,6 @@
 require_relative "lib/film"
 
-file_names = Dir["#{__dir__}/data/*"]
+file_names = Dir["#{__dir__}/data/*.txt"]
 films = file_names.map do |file_name|
   lines = File.readlines(file_name, chomp: true)
   Film.new(lines[0], lines[1], lines[2])
@@ -20,7 +20,7 @@ puts "Введите номер из списка:"
 user_input = STDIN.gets.to_i
 puts
 
-diretor_films = films.find_all { |film| film.director == directors[user_input - 1] }
+director_films = films.find_all { |film| film.director == directors[user_input - 1] }
 
 puts "Сегодня вечером рекомендую посмотреть:"
-puts diretor_films.sample.full_info
+puts director_films.sample.full_info

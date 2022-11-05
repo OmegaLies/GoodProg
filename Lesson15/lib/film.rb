@@ -8,6 +8,6 @@ class Film
   end
 
   def full_info
-    "#{@director} - #{@title} - (#{year})"
+    "#{@director} - #{@title} - (#{@year})"
   end
 end
