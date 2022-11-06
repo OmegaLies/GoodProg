@@ -23,6 +23,4 @@ describe Hashtag do
   it "Не захватывается восклицательный знак" do
     expect(Hashtag.from_string("Нет, уж лучше #вы_к_нам!")).to eq "#вы_к_нам"
   end
-
-
 end
